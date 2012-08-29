@@ -60,7 +60,7 @@ module Kontagent
       path += "&st1=#{opts[:st1]}" if opts[:st1]
       path += "&st2=#{opts[:st2]}" if opts[:st2]
       path += "&st3=#{opts[:st3]}" if opts[:st3]
-      path += "&data=#{URI.encode(opts[:data])}" if opts[:data]
+      path += "&data=#{URI.encode(opts[:data].to_json)}" if opts[:data]
       call_api(path)
     end
     
