@@ -76,6 +76,3 @@ module Kontagent
     
   end
 end
-
-
-request -> app server -> app_code -> delayed_job_queue -> database
