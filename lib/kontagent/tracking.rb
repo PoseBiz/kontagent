@@ -66,9 +66,8 @@ module Kontagent
     
     private
     def call_api(path)
-      http = Net::HTTP.new(base_url)
       Kontagent.logger.info "[Kontagent Request] #{base_url+path}" if debug_mode
-      response = http.get(path)
+      response = http_client.get(path)
       Kontagent.logger.info "[Kontagent Response] #{response.code}: #{response.body}" if debug_mode
       response
     end
