@@ -68,7 +68,7 @@ module Kontagent
     def call_api(path)
       Kontagent.logger.info "[Kontagent Request] #{base_url+path}" if debug_mode
       uri = URI(base_url + path)
-      puts "Calling URI" uri
+      puts "Calling URI: #{uri}"
       response = http_client.request(uri)
       Kontagent.logger.info "[Kontagent Response] #{response.code}: #{response.body}" if debug_mode
       response
